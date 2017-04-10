@@ -1,0 +1,23 @@
+{
+  "name": "projectGitHubAvatarDownloader",
+  "version": "1.0.0",
+  "description": "## Problem Statement",
+  "main": "project.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BrandonGA/projectGitHubAvatarDownloader.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BrandonGA/projectGitHubAvatarDownloader/issues"
+  },
+  "homepage": "https://github.com/BrandonGA/projectGitHubAvatarDownloader#readme",
+  "dependencies": {
+    "request": "^2.81.0"
+  }
+}
