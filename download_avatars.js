@@ -1,5 +1,6 @@
 var request = require('request');
 var fs = require ('fs')
+var repoInfo = process.argv.slice(2, 4)
 
 console.log('Welcome to the GitHub Avatar Downloader!');
 
@@ -25,8 +26,8 @@ function getRepoContributors(repoOwner, repoName, cb) {
   });
 }
 
-function downloadImageByURL(requestURL, filePath) {
-  request.get(requestURL)
+function downloadImageByURL(url, filePath) {
+  request.get(url)
   .on('error', function (err){
     throw err;
   })
@@ -34,7 +35,13 @@ function downloadImageByURL(requestURL, filePath) {
 }
 
 
-getRepoContributors("jquery", "jquery", function(err, result) {
+getRepoContributors(repoInfo[0], repoInfo[1], function(err, result) {
+  if (!repoInfo[0] || !repoInfo[1]) {
+    console.log("Error! Credentials have not been specified...")
+  }else{
+    console.log("Success")
+  }
+
   console.log("Errors:", err);
   console.log("Result:", result);
   for (imageURL in result){
